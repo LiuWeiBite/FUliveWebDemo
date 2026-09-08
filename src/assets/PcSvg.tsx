@@ -1770,3 +1770,205 @@ export const Meijianju = () => {
     </svg>
   );
 };
+
+export const Xiaotou = () => {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M23.428 12.3555C23.428 18.4306 18.2009 23.3555 13.6066 23.3555C9.01231 23.3555 3.78516 18.4306 3.78516 12.3555C3.78516 5.20553 8.18236 1.35547 13.6066 1.35547C19.0308 1.35547 23.428 5.20553 23.428 12.3555Z"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6 26.0005L1.99805 22M1.99805 22L1.99805 25M1.99805 22L4.99805 22"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21.998 26.0005L26 22M26 22L26 25M26 22L23 22"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.5 4.5L6 2M6 2L6 5M6 2H9"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M19.5 4.5L22 2M22 2L22 5M22 2H19"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const Waiyanjiao = () => {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M23.991 10.9828C25.4968 12.7352 25.4968 15.2648 23.991 17.0172C22.3625 18.9123 19.7235 21 16 21C12.2765 21 9.63753 18.9123 8.00901 17.0172C6.50316 15.2648 6.50316 12.7352 8.00901 10.9828C9.63753 9.08766 12.2765 7 16 7C19.7235 7 22.3625 9.08766 23.991 10.9828Z"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M20 14C20 16.2091 18.2091 18 16 18C13.7909 18 12 16.2091 12 14C12 11.7909 13.7909 10 16 10C18.2091 10 20 11.7909 20 14Z"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M24.5 12.5C25.8 13.2 26.5 14.5 26.5 16C26.5 17.8 25.3 19.2 23.8 19.8"
+        stroke="#969799"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeDasharray="2 2"
+      />
+    </svg>
+  );
+};
+
+export const Biyi = () => {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14 5C14 5 12.5 7.5 12.5 10.5C12.5 14 14 17 14 17C14 17 15.5 14 15.5 10.5C15.5 7.5 14 5 14 5Z"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.5 15.5C11.2 16.8 12.5 17.5 14 17.5C15.5 17.5 16.8 16.8 17.5 15.5"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M4.5 14.5L7.5 14.5M7.5 14.5L6.5 13.5M7.5 14.5L6.5 15.5"
+        stroke="#969799"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M23.5 14.5L20.5 14.5M20.5 14.5L21.5 13.5M20.5 14.5L21.5 15.5"
+        stroke="#969799"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const Zuikuan = () => {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.5 14.5C10.5 15.8 12.1 16.5 14 16.5C15.9 16.5 17.5 15.8 18.5 14.5"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M8.68496 19.9016C6.16922 18.436 3.19922 15.0283 3.19922 13.6735C3.19922 12.9733 7.96231 8.74939 9.04065 8.21863C11.2717 7.11974 13.1596 8.45785 13.9992 9.14946C14.8466 8.45785 16.7345 7.11974 18.9659 8.21863C20.0445 8.7497 24.7992 12.9736 24.7992 13.6735C24.7992 15.0283 21.8292 18.436 19.3127 19.9016C16.7962 21.3672 11.2007 21.3672 8.68496 19.9016Z"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4 20.5L1.5 20.5M1.5 20.5L2.5 19.5M1.5 20.5L2.5 21.5"
+        stroke="#969799"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M24 20.5L26.5 20.5M26.5 20.5L25.5 19.5M26.5 20.5L25.5 21.5"
+        stroke="#969799"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const Tila = () => {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M23.6175 11.9997C23.6175 17.9474 18.5 22.7689 14.0021 22.7689C9.50421 22.7689 4.38672 17.9474 4.38672 11.9997C4.38672 4.99976 8.69167 1.23047 14.0021 1.23047C19.3125 1.23047 23.6175 4.99976 23.6175 11.9997Z"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.1562 18.0176C12.5283 18.701 13.2017 19.1575 13.9706 19.1575C14.7461 19.1575 15.4244 18.6931 15.7945 17.9998"
+        stroke="#969799"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M8 12L8 8M8 8L6.5 9.5M8 8L9.5 9.5"
+        stroke="#969799"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M20 12L20 8M20 8L18.5 9.5M20 8L21.5 9.5"
+        stroke="#969799"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

@@ -21,11 +21,11 @@ import { LoadingOutlined, UploadOutlined } from "@ant-design/icons";
 import {
   createDeferred,
   flipPixels,
+  getOffscreenCanvas,
   getVideoPlayerInfo,
   isAgora,
   isUpload,
   testUA,
-  useWorker,
 } from "@/utils/tools";
 import { useGlobalStore } from "@/store";
 import { Button, Upload, message } from "antd";
@@ -171,9 +171,7 @@ export const VideoPlayer: React.FC = () => {
   useEffect(() => {
     if (isAgora()) {
       if (!canvas || !cameraSetting.width) return;
-      const offscreen = !useWorker()
-        ? canvas
-        : canvas.transferControlToOffscreen();
+      const offscreen = getOffscreenCanvas(canvas);
       console.log("canvas", canvas);
 
       NamaSDK.instance.setCanvasAndVideoStream(offscreen);
@@ -186,10 +184,7 @@ export const VideoPlayer: React.FC = () => {
         console.log("not agora before setCanvasAndVideoStream get return");
         return;
       }
-      const offscreen =
-        !useWorker() || isUpload()
-          ? canvas
-          : canvas.transferControlToOffscreen();
+      const offscreen = getOffscreenCanvas(canvas);
       NamaSDK.instance.setCanvasAndVideoStream(
         offscreen,
         videoStream,

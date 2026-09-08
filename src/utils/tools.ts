@@ -184,6 +184,26 @@ export const useWorker = () => {
   );
 };
 
+const offscreenCanvasCache = new WeakMap<
+  HTMLCanvasElement,
+  OffscreenCanvas | HTMLCanvasElement
+>();
+
+export const getOffscreenCanvas = (
+  canvas: HTMLCanvasElement,
+): OffscreenCanvas | HTMLCanvasElement => {
+  if (!useWorker() || isUpload()) {
+    return canvas;
+  }
+  const cached = offscreenCanvasCache.get(canvas);
+  if (cached) {
+    return cached;
+  }
+  const offscreen = canvas.transferControlToOffscreen();
+  offscreenCanvasCache.set(canvas, offscreen);
+  return offscreen;
+};
+
 export const isAgora = () => {
   return location.pathname.includes("/agora");
 };

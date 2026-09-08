@@ -16,6 +16,7 @@ import { PanelContext } from "@/components/ConfigPanelContext";
 import { getInitValue, updateSDKEffects } from "@/utils/tools";
 import _ from "lodash";
 import { FuSlider } from "@/components/Slider";
+import { FitLabel } from "@/components/FitLabel";
 
 enum IconStatus {
   default,
@@ -89,15 +90,15 @@ export const MobileHome: React.FC = () => {
       children: [
         {
           key: menuKey.effects,
-          label: "美肤",
+          label: t("美肤"),
         },
         {
           key: menuKey.shaping,
-          label: "美型",
+          label: t("美型"),
         },
         {
           key: menuKey.filter,
-          label: "滤镜",
+          label: t("滤镜"),
         },
       ],
     },
@@ -321,10 +322,14 @@ export const MobileHome: React.FC = () => {
                                 !switchV && styles.disabled,
                               )}
                             >
-                              <img
-                                src={item.MobIcons[iconIndex(item)]}
-                                alt=""
-                              />
+                              {item.MobIcons?.length ? (
+                                <img
+                                  src={item.MobIcons[iconIndex(item)]}
+                                  alt=""
+                                />
+                              ) : (
+                                <div className={styles.pcIcon}>{item.PcIcon}</div>
+                              )}
                               {t(item.label)}
                             </div>
                           ))}
@@ -359,9 +364,15 @@ export const MobileHome: React.FC = () => {
                             >
                               <img
                                 crossOrigin="anonymous"
-                                src={`${CDNBase}/demo_icon_${item.key}.png`}
+                                src={
+                                  item.MobIcons?.[0] ||
+                                  `${CDNBase}/demo_icon_${item.key}.png`
+                                }
                               />
-                              <span>{t(item.label) + item.index}</span>
+                              <FitLabel className={styles.filterLabel}>
+                                {t(item.label)}
+                                {item.index ?? ""}
+                              </FitLabel>
                             </div>
                           ))}
                         </>

@@ -18,6 +18,7 @@ import { StickerStauts, useContent, useStickers } from "@/utils/hooks";
 import { useCallback, useContext, useMemo } from "react";
 import { FuSlider } from "@/components/Slider";
 import { PanelContext } from "@/components/ConfigPanelContext";
+import { FitLabel } from "@/components/FitLabel";
 
 export const PcHome: React.FC = () => {
   const { t } = useTranslation();
@@ -242,10 +243,16 @@ export const PcHome: React.FC = () => {
                             >
                               <img
                                 crossOrigin="anonymous"
-                                src={`${CDNBase}/demo_icon_${item.key}.png`}
+                                src={
+                                  item.MobIcons?.[0] ||
+                                  `${CDNBase}/demo_icon_${item.key}.png`
+                                }
                               />
                             </div>
-                            <span>{t(item.label) + item.index}</span>
+                            <FitLabel className={styles.filterLabel}>
+                              {t(item.label)}
+                              {item.index ?? ""}
+                            </FitLabel>
                           </div>
                         ))}
                     </div>
