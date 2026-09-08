@@ -11,14 +11,31 @@ import { Popover } from "antd";
 import { Popover as MobPopover } from "antd-mobile";
 import { OptItem, Options } from "@/common/global";
 
+const langIcons: Partial<Record<OptItem["key"], string>> = {
+  zh: CnIcon,
+  en: EnIcon,
+};
+
+const renderMobileLang = (item: OptItem) => {
+  const icon = langIcons[item.key];
+  if (icon) {
+    return <img src={icon} alt="" />;
+  }
+  return <span className={styles.mobileLabel}>{item.mobileLabel}</span>;
+};
+
 export const LangSwitch: React.FC = () => {
-  const [lg, setLg] = useState<OptItem>(Options[0]);
+  const { i18n, t } = useTranslation();
+  const lg = useMemo(
+    () => Options.find((item) => item.key === i18n.language) ?? Options[0],
+    [i18n.language],
+  );
   const { isPc } = useUA();
   const [open, setOpen] = useState<boolean>(false);
-  const { i18n, t } = useTranslation();
 
-  const handleClick = (k: string) => {
-    i18n.changeLanguage(k);
+  const handleClick = async (k: string) => {
+    await i18n.changeLanguage(k);
+    message.success(t("语言切换成功"));
     setOpen(false);
   };
 
@@ -51,19 +68,13 @@ export const LangSwitch: React.FC = () => {
               key={index}
               className={classnames(
                 styles.langOpt,
-                item.key === lg?.key && styles.active
+                item.key === lg?.key && styles.active,
               )}
               onClick={() => {
                 handleClick(item.key);
-                message.success(t("语言切换成功"));
-                setLg(item);
               }}
             >
-              {isPc ? (
-                item?.pcLabel
-              ) : (
-                <img src={item.key === "en" ? EnIcon : CnIcon} alt="" />
-              )}
+              {isPc ? item?.pcLabel : renderMobileLang(item)}
             </div>
           ))}
         </div>
@@ -75,7 +86,7 @@ export const LangSwitch: React.FC = () => {
         {isPc ? (
           <span className={styles.text}>{lg?.pcLabel}</span>
         ) : (
-          <img src={lg?.key === "en" ? EnIcon : CnIcon} alt="" />
+          renderMobileLang(lg)
         )}
         {isPc && <DownFill className={open && styles.open} />}
       </div>

@@ -17,6 +17,7 @@ import { useGlobalStore } from "@/store";
 import FanZhuan from "@/assets/turn-around.png";
 import Layout from "@/components/Layout";
 import { Loading } from "@/components/Loading";
+import { LangSwitch } from "@/components/Lang";
 import { isIphone, isSafari, sleep, testUA } from "@/utils/tools";
 
 const Agora: React.FC = () => {
@@ -202,7 +203,7 @@ const Agora: React.FC = () => {
     const uidCon = localPlayerContainer?.querySelector?.("#localUid");
     if (uidCon) {
       // Specify the ID of the DIV container. You can use the uid of the local user.
-      uidCon.textContent = "Local user " + valRef.current;
+      uidCon.textContent = `${t("本地用户")} ${valRef.current}`;
     }
     // Play the local video track.
     // Pass the DIV container and the SDK dynamically creates a player in the container for playing the local video track.
@@ -321,6 +322,11 @@ const Agora: React.FC = () => {
   return (
     <div className={classNames(styles.agora, isPc ? styles.pc : styles.mobile)}>
       <Loading visible={switchingCamera} />
+      {!joined && (
+        <div className={styles.langWrap}>
+          <LangSwitch />
+        </div>
+      )}
       <div className={classNames(styles.form, joined && styles.joined)}>
         {!joined && (
           <>
@@ -350,7 +356,7 @@ const Agora: React.FC = () => {
               />
             )}
             <Button type="primary" onClick={handleMute}>
-              {muted ? "开启声音" : "静音"}
+              {muted ? t("开启声音") : t("静音")}
             </Button>
           </>
         )}
@@ -358,9 +364,11 @@ const Agora: React.FC = () => {
           {t(joined ? "退出" : "加入")}
         </Button>
       </div>
-      <div style={{ display: joined ? "block" : "none", height: "100%" }}>
-        <Layout />
-      </div>
+      {joined && (
+        <div style={{ height: "100%" }}>
+          <Layout />
+        </div>
+      )}
     </div>
   );
 };
@@ -408,14 +416,6 @@ const joinAgora = async (
   cb?: (v: { width: number; height: number }) => void,
 ) => {
   if (!isSwitch) {
-    //检测如果agoraOptions.appId是undefined跳出弹窗，无法关闭的弹窗
-
-
-    if (!agoraOptions.appId || !agoraOptions.token) {
-      alert("请先配置agoraOptions.appId");
-      return;
-    }
-
     await window.rtc.client.join(
       agoraOptions.appId,
       channel,

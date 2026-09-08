@@ -29,7 +29,7 @@ export interface MenuItem {
 export const defaultFilterSliderValue = 40; // 上层值
 
 export interface OptItem {
-  key: "zh" | "en";
+  key: "zh" | "en" | "ja";
   pcLabel: string;
   mobileLabel: string;
 }
@@ -44,6 +44,11 @@ export const Options: OptItem[] = [
     key: "en",
     pcLabel: "English",
     mobileLabel: "En",
+  },
+  {
+    key: "ja",
+    pcLabel: "日本語",
+    mobileLabel: "日",
   },
 ];
 
@@ -67,9 +72,9 @@ export const remoteItemUser = "remoteItemUser";
 
 export const agoraOptions = {
   // Pass your App ID here.
-  appId: undefined,
+  appId: "",
   // Pass your temp token here.
-  token: undefined,
+  token: "",
 };
 
 /**

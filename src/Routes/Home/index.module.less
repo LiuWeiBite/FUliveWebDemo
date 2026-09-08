@@ -55,6 +55,8 @@
         flex-wrap: wrap;
         gap: 16px;
         .blockWrap {
+          width: 90px;
+          flex-shrink: 0;
           span {
             color: rgba(50, 50, 51, 1);
             font-family: PingFang SC;
@@ -65,6 +67,12 @@
             margin-top: 5px;
             display: inline-block;
             width: 100%;
+          }
+          .filterLabel {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
           }
         }
         .filterBlock {
@@ -451,6 +459,18 @@
             object-fit: cover;
             margin-bottom: 4px;
           }
+          .pcIcon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 0.88rem;
+            height: 0.88rem;
+            margin-bottom: 4px;
+            svg {
+              width: 0.56rem;
+              height: 0.56rem;
+            }
+          }
           .switchWrap {
             display: flex;
             align-items: center;
@@ -466,6 +486,8 @@
 
         .filterItem {
           margin: 0 0.125rem;
+          width: 1.16rem;
+          flex-shrink: 0;
           display: flex;
           align-items: center;
           flex-direction: column;
@@ -479,7 +501,8 @@
               margin-bottom: 0.03rem;
             }
 
-            > span {
+            > span,
+            .filterLabel {
               color: rgba(40, 124, 250, 1);
             }
           }
@@ -513,6 +536,18 @@
             }
           }
           > span {
+            font-family: PingFang SC;
+            font-size: 0.2rem;
+            font-weight: 500;
+            line-height: 0.28rem;
+            text-align: center;
+            color: #fff;
+          }
+          .filterLabel {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
             font-family: PingFang SC;
             font-size: 0.2rem;
             font-weight: 500;

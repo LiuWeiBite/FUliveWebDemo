@@ -35,6 +35,11 @@ import {
   Zhailian,
   Zuibahoudu,
   Zuixing,
+  Xiaotou,
+  Waiyanjiao,
+  Biyi,
+  // Zuikuan,
+  // Tila,
 } from "@/assets/PcSvg";
 import MobCb from "@/assets/mobIcons/MobCb.png";
 import MobCbActive from "@/assets/mobIcons/MobCbActive.png";
@@ -180,6 +185,10 @@ import MobZx from "@/assets/mobIcons/MobZx.png";
 import MobZxActive from "@/assets/mobIcons/MobZxActive.png";
 import MobZxChanges from "@/assets/mobIcons/MobZxChanges.png";
 import MobZxChangesActive from "@/assets/mobIcons/MobZxChangesActive.png";
+import FilterRoguanglengzi from "@/assets/filterIcons/roguanglengzi.png";
+import FilterLengbaipi from "@/assets/filterIcons/lengbaipi.png";
+import FilterWeibaolvjing from "@/assets/filterIcons/weibaolvjing.png";
+import FilterQingtouguanggan from "@/assets/filterIcons/qingtouguanggan.png";
 import shoulian from "@/assets/shoulian.png";
 
 export interface TabOptionItem {
@@ -462,6 +471,16 @@ const shapingList: TabOptionItem[] = [
     initValue: 0,
   },
   {
+    key: "小头",
+    label: "小头",
+    range: [0, 100],
+    PcIcon: <Xiaotou />,
+    fuKey: "custom_warp_small_head",
+    rawInitValue: 0,
+    rawRange: [0, 1],
+    initValue: 0,
+  },
+  {
     key: "瘦颧骨",
     label: "瘦颧骨",
     range: [0, 100],
@@ -493,6 +512,16 @@ const shapingList: TabOptionItem[] = [
     rawRange: [0, 1],
     initValue: 10,
   },
+  // {
+  //   key: "提拉",
+  //   label: "提拉",
+  //   range: [0, 100],
+  //   PcIcon: <Tila />,
+  //   fuKey: "custom_warp_face_lift",
+  //   rawInitValue: 0,
+  //   rawRange: [0, 1],
+  //   initValue: 0,
+  // },
   {
     key: "大眼",
     label: "大眼",
@@ -556,6 +585,17 @@ const shapingList: TabOptionItem[] = [
     initValue: 50,
   },
   {
+    key: "鼻翼",
+    label: "鼻翼",
+    range: [-50, 50],
+    PcIcon: <Biyi />,
+    fuKey: "custom_warp_nose_alar",
+    rawInitValue: 0.5,
+    rawRange: [0, 1],
+    reflexType: 2,
+    initValue: 0,
+  },
+  {
     key: "嘴型",
     label: "嘴型",
     range: [-50, 50],
@@ -567,6 +607,17 @@ const shapingList: TabOptionItem[] = [
     reflexType: 2,
     initValue: 0,
   },
+  // {
+  //   key: "嘴宽",
+  //   label: "嘴宽",
+  //   range: [-50, 50],
+  //   PcIcon: <Zuikuan />,
+  //   fuKey: "custom_warp_mouth_width",
+  //   rawInitValue: 0.5,
+  //   rawRange: [0, 1],
+  //   reflexType: 2,
+  //   initValue: 0,
+  // },
   {
     key: "嘴唇厚度",
     label: "嘴唇厚度",
@@ -600,6 +651,17 @@ const shapingList: TabOptionItem[] = [
     fuKey: "intensity_canthus",
     rawInitValue: 0,
     rawRange: [0, 1],
+    initValue: 0,
+  },
+  {
+    key: "外眼角",
+    label: "外眼角",
+    range: [-50, 50],
+    PcIcon: <Waiyanjiao />,
+    fuKey: "custom_warp_eye_outter",
+    rawInitValue: 0.5,
+    rawRange: [0, 1],
+    reflexType: 2,
     initValue: 0,
   },
   {
@@ -712,6 +774,38 @@ const shapingList: TabOptionItem[] = [
 // 实际没用这个initValue
 // 后续如果要每个滤镜的初始值不同的话还是需要这个值的
 const filterList = [
+  {
+    key: "roguanglengzi",
+    label: "柔光冷紫",
+    initValue: 0,
+    range: [0, 100],
+    PcIcon: "",
+    MobIcons: [FilterRoguanglengzi],
+  },
+  {
+    key: "lengbaipi",
+    label: "冷白皮",
+    initValue: 0,
+    range: [0, 100],
+    PcIcon: "",
+    MobIcons: [FilterLengbaipi],
+  },
+  {
+    key: "weibaolvjing",
+    label: "微曝滤镜",
+    initValue: 0,
+    range: [0, 100],
+    PcIcon: "",
+    MobIcons: [FilterWeibaolvjing],
+  },
+  {
+    key: "qingtouguanggan",
+    label: "清透光感",
+    initValue: 0,
+    range: [0, 100],
+    PcIcon: "",
+    MobIcons: [FilterQingtouguanggan],
+  },
   {
     key: "ziran1",
     label: "自然",

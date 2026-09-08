@@ -3,8 +3,20 @@
   width: 100%;
   position: relative;
   background-color: #f1f1f1;
+
+  .langWrap {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    z-index: 10;
+  }
+
   &.mobile {
     font-size: 0.36rem;
+    .langWrap {
+      top: 0.32rem;
+      right: 0.24rem;
+    }
     .form:not(.joined) {
       padding: 1rem 0.24rem;
       > div {
